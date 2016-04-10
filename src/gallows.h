@@ -6,9 +6,13 @@
 namespace hangman {
 
 class gallows {
- public:
+ public:  
   explicit gallows(const std::int_fast32_t &lives);
   void loseOneLive();
+  bool is_alive() const;
+
+ private:
+  std::int_fast32_t lives_;
 };
 }
 

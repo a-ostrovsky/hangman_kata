@@ -2,9 +2,8 @@
 
 using namespace hangman;
 
-gallows::gallows(const int_fast32_t &lives) {}
+gallows::gallows(const std::int_fast32_t &lives) : lives_(lives) {}
 
-void gallows::loseOneLive()
-{
+void gallows::loseOneLive() { lives_--; }
 
-}
+bool gallows::is_alive() const { return lives_ > 0; }

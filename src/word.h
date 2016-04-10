@@ -2,16 +2,21 @@
 #define WORD_H
 
 #include <string>
+#include <unordered_set>
 
 namespace hangman {
 
 class word {
  public:
   explicit word(const std::string &contents);
-  bool has_letter(const char &letter) const;
+  bool guess_letter(const char &letter);
+  bool is_solved() const;
 
  private:
-  std::string contents_;
+  bool is_letter_in_word(const char &lower_case_letter) const;
+  bool is_letter_already_guessed(const char &lower_case_letter) const;
+  std::string contents_lower_case_;
+  std::unordered_set<char> guessed_lower_case_letters_;
 };
 }
 
