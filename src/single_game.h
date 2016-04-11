@@ -1,5 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef SINGLE_GAME_H
+#define SINGLE_GAME_H
 
 #include <memory>
 #include <istream>
@@ -24,4 +24,4 @@ class single_game {
 };
 }
 
-#endif  // GAME_H
+#endif  // SINGLE_GAME_H

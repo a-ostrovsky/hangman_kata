@@ -1,8 +1,6 @@
 #include <memory>
 #include "game.h"
 #include "single_game.h"
-#include "word.h"    //TODO??
-#include "player.h"  //TODO??
 
 using namespace hangman;
 
@@ -12,6 +10,7 @@ void game::play() {
   auto player_ptr = std::make_shared<player>(LIVES);
   auto word_ptr = std::make_shared<word>(random_word());
   single_game played_game(word_ptr, player_ptr, std::cin);
+  played_game.play();
 }
 
 std::string game::random_word() {

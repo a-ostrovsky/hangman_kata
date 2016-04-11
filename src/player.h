@@ -1,5 +1,5 @@
-#ifndef GALLOWS_H
-#define GALLOWS_H
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <cstdint>
 
@@ -16,4 +16,4 @@ class player {
 };
 }
 
-#endif  // GALLOWS_H
+#endif  // PLAYER_H
