@@ -4,7 +4,7 @@ include_directories (../src
                      ${GTest_LIBRARIES})
 add_executable (hangman_test                
                 test_word.cpp
-                test_gallows.cpp
+                test_player.cpp
                 test_game.cpp
                 main.cpp)
 target_link_libraries (hangman_test

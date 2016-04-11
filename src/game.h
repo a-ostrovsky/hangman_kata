@@ -4,7 +4,7 @@
 #include <memory>
 #include <istream>
 #include "word.h"
-#include "gallows.h"
+#include "player.h"
 
 namespace hangman {
 

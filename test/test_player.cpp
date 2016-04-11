@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
-#include "gallows.h"
-#include "signal_tester.h"
+#include "player.h"
 
 using namespace hangman;
 using namespace ::testing;

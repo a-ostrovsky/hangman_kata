@@ -1,4 +1,4 @@
-#include "gallows.h"
+#include "player.h"
 
 using namespace hangman;
 
