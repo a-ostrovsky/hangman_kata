@@ -1,6 +1,6 @@
 #include <sstream>
 #include <gtest/gtest.h>
-#include "game.h"
+#include "single_game.h"
 
 using namespace hangman;
 using namespace testing;

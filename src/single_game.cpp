@@ -1,4 +1,4 @@
-#include "game.h"
+#include "single_game.h"
 
 using namespace hangman;
 

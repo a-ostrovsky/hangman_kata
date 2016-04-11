@@ -1,5 +1,5 @@
 include_directories(.)
 add_library(hangman_lib
             player.cpp
-            game.cpp
+            single_game.cpp
             word.cpp)
