@@ -5,9 +5,10 @@ include_directories (../src
 add_executable (hangman_test                
                 test_word.cpp
                 test_player.cpp
-                test_single_game.cpp
+                test_single_game.cpp                
                 main.cpp)
 target_link_libraries (hangman_test
                        hangman_lib
-                       gtest                       
+                       gtest
+                       ${Boost_LIBRARIES}
                        ${CMAKE_THREAD_LIBS_INIT})

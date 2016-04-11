@@ -4,12 +4,12 @@
 using namespace hangman;
 using namespace ::testing;
 
-TEST(gallows_is_alive, true_iff_player_is_alive) {
-  gallows g(2);
+TEST(player_is_alive, true_iff_player_is_alive) {
+  player p(2);
 
-  g.loseOneLive();
-  EXPECT_TRUE(g.is_alive());
+  p.loseOneLive();
+  EXPECT_TRUE(p.is_alive());
 
-  g.loseOneLive();
-  EXPECT_FALSE(g.is_alive());
+  p.loseOneLive();
+  EXPECT_FALSE(p.is_alive());
 }

@@ -10,16 +10,16 @@ namespace hangman {
 
 enum class game_result { won, lost };
 
-class game {
+class single_game {
  public:
-  game(std::shared_ptr<word> word, std::shared_ptr<gallows> gallows,
+  single_game(std::shared_ptr<word> word, std::shared_ptr<player> player,
        std::istream &user_input);
   game_result play();
 
  private:
   void guess_next_letter();
   std::shared_ptr<word> word_;
-  std::shared_ptr<gallows> gallows_;
+  std::shared_ptr<player> gallows_;
   std::istream &user_input_;
 };
 }
