@@ -9,7 +9,7 @@ namespace hangman {
 
 class game {
  public:
-  const std::int_fast32_t LIVES = 10;
+  const std::int_fast32_t LIVES = 5;
   game(const std::vector<std::string> &words);
   void play();
 

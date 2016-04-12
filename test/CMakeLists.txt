@@ -1,5 +1,4 @@
 find_package(GTest REQUIRED)
-find_package(Threads REQUIRED)
 include_directories (../src
                      ${GTest_LIBRARIES})
 add_executable (hangman_test                
@@ -12,3 +11,4 @@ target_link_libraries (hangman_test
                        gtest
                        ${Boost_LIBRARIES}
                        ${CMAKE_THREAD_LIBS_INIT})
+add_test(hangman_test ${CMAKE_CURRENT_BINARY_DIR}/hangman_test)
