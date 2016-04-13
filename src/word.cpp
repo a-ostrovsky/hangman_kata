@@ -16,12 +16,21 @@ bool word::guess_letter(const char &letter) {
 }
 
 bool word::is_solved() const {
+  word_representation r = representation();
+  auto position_of_unsolved_letter = std::find(r.begin(), r.end(), boost::none);
+  return position_of_unsolved_letter == r.end();
+}
+
+word_representation word::representation() const {
+  word_representation result;
   for (char letter : contents_lower_case_) {
-    if (!is_letter_already_guessed(letter)) {
-      return false;
+    if (is_letter_already_guessed(letter)) {
+      result.push_back(letter);
+    } else {
+      result.push_back(boost::none);
     }
   }
-  return true;
+  return result;
 }
 
 bool word::is_letter_in_word(const char &lower_case_letter) const {

@@ -8,7 +8,7 @@ namespace hangman {
 class player {
  public:  
   explicit player(const std::int_fast32_t &lives);
-  void loseOneLive();
+  void lose_one_live();
   bool is_alive() const;
 
  private:

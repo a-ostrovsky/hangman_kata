@@ -19,7 +19,7 @@ class single_game {
  private:
   void guess_next_letter();
   std::shared_ptr<word> word_;
-  std::shared_ptr<player> gallows_;
+  std::shared_ptr<player> player_;
   std::istream &user_input_;
 };
 }

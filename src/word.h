@@ -3,14 +3,19 @@
 
 #include <string>
 #include <unordered_set>
+#include <vector>
+#include <boost/optional.hpp>
 
 namespace hangman {
+
+using word_representation = std::vector<boost::optional<char>>;
 
 class word {
  public:
   explicit word(const std::string &contents);
   bool guess_letter(const char &letter);
   bool is_solved() const;
+  word_representation representation() const;
 
  private:
   bool is_letter_in_word(const char &lower_case_letter) const;
