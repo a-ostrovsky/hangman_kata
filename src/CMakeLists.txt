@@ -4,4 +4,5 @@ add_library(hangman_lib
             single_game.cpp
             game.cpp
             word.cpp
+            scoreboard.cpp
             main.cpp)
