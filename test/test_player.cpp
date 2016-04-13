@@ -13,3 +13,14 @@ TEST(player_is_alive, true_iff_player_is_alive) {
   p.lose_one_live();
   EXPECT_FALSE(p.is_alive());
 }
+
+TEST(player_lives, number_of_lives_left) {
+  player p(2);
+  EXPECT_EQ(2, p.lives());
+
+  p.lose_one_live();
+  EXPECT_EQ(1, p.lives());
+
+  p.lose_one_live();
+  EXPECT_EQ(0, p.lives());
+}
