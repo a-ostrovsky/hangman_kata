@@ -1,7 +1,7 @@
 project(hangman)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-find_package(Boost COMPONENTS random REQUIRED)
+find_package(Boost COMPONENTS random signals REQUIRED)
 cmake_minimum_required(VERSION 2.8)
 aux_source_directory(./src SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST})

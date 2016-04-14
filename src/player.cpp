@@ -4,7 +4,10 @@ using namespace hangman;
 
 player::player(const std::int_fast32_t &lives) : lives_(lives) {}
 
-void player::lose_one_live() { lives_--; }
+void player::lose_one_live() {
+  lives_--;
+  notify_state_changed();
+}
 
 bool player::is_alive() const { return lives_ > 0; }
 

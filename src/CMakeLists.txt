@@ -1,5 +1,6 @@
 include_directories(.)
-add_library(hangman_lib            
+add_library(hangman_lib
+            with_observable_state.h
             player.cpp
             single_game.cpp
             game.cpp

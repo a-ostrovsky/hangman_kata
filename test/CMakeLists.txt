@@ -1,4 +1,5 @@
 find_package(GTest REQUIRED)
+#TODO: Add gmock??
 include_directories (../src
                      ${GTest_LIBRARIES})
 add_executable (hangman_test                

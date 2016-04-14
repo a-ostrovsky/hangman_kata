@@ -2,11 +2,12 @@
 #define PLAYER_H
 
 #include <cstdint>
+#include "with_observable_state.h"
 
 namespace hangman {
 
-class player {
- public:  
+class player : public with_observable_state {
+ public:
   explicit player(const std::int_fast32_t &lives);
   void lose_one_live();
   bool is_alive() const;
