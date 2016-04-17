@@ -25,12 +25,14 @@ class single_game_fixture : public Test {
   }
 };
 
-TEST_F(single_game_fixture, single_game_play__game_result_is_won_for_winning_guess_sequence) {
+TEST_F(single_game_fixture,
+       single_game_play__game_result_is_won_for_winning_guess_sequence) {
   auto game = new_game(winning_guess_seqence());
   ASSERT_EQ(game_result::won, game.play());
 }
 
-TEST_F(single_game_fixture, single_game_play__game_result_is_lost_for_losing_guess_sequence) {
+TEST_F(single_game_fixture,
+       single_game_play__game_result_is_lost_for_losing_guess_sequence) {
   auto game = new_game(losing_guess_seqence());
   ASSERT_EQ(game_result::lost, game.play());
 }

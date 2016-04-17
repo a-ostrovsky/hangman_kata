@@ -4,9 +4,16 @@
 
 using namespace hangman;
 
-scoreboard::scoreboard(std::shared_ptr<hangman::player> player,
-                       std::shared_ptr<hangman::word> word)
-    : player_(player), word_(word) {}
+scoreboard::scoreboard(std::shared_ptr<hangman::word> word,
+                       std::shared_ptr<hangman::player> player)
+    : word_(word), player_(player) {
+  word->state_changed.connect(
+      boost::bind(&scoreboard::notify_stats_changed, this));
+  player->state_changed.connect(
+      boost::bind(&scoreboard::notify_stats_changed, this));
+}
+
+void scoreboard::notify_stats_changed() const { stats_changed(stats()); }
 
 std::string scoreboard::format_lives() const {
   return std::string(static_cast<size_t>(player_->lives()), 'I');

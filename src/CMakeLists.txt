@@ -4,6 +4,9 @@ add_library(hangman_lib
             player.cpp
             single_game.cpp
             game.cpp
-            word.cpp
+            word.cpp            
             scoreboard.cpp
             main.cpp)
+target_link_libraries (hangman_lib
+                       ${Boost_LIBRARIES}
+                       ${CMAKE_THREAD_LIBS_INIT})

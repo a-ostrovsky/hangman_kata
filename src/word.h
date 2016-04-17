@@ -5,12 +5,13 @@
 #include <unordered_set>
 #include <vector>
 #include <boost/optional.hpp>
+#include "with_observable_state.h"
 
 namespace hangman {
 
 using word_representation = std::vector<boost::optional<char>>;
 
-class word {
+class word : public with_observable_state {
  public:
   explicit word(const std::string &contents);
   bool guess_letter(const char &letter);

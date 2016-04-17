@@ -14,6 +14,7 @@ class game {
   void play();
 
  private:
+  void show_score(const std::string &score);
   std::string random_word();
   std::vector<std::string> words_;
   boost::random::mt19937 generator_;

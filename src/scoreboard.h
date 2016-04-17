@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <string>
+#include <boost/signals2.hpp>
 #include "player.h"
 #include "word.h"
 
@@ -10,15 +11,16 @@ namespace hangman {
 
 class scoreboard {
  public:
-  scoreboard(std::shared_ptr<player> player, std::shared_ptr<word> word);
+  boost::signals2::signal<void(const std::string&)> stats_changed;
+  scoreboard(std::shared_ptr<word> word, std::shared_ptr<player> player);
   std::string stats() const;
 
  private:
+  void notify_stats_changed() const;
   std::string format_lives() const;
   std::string format_word() const;
-  std::shared_ptr<player> player_;
   std::shared_ptr<word> word_;
-
+  std::shared_ptr<player> player_;
 };
 }
 

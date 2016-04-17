@@ -1,10 +1,16 @@
 project(hangman)
+set(CMAKE_CXX_FLAGS "-std=c++14 -stdlib=libc++")
+set(CMAKE_EXE_LINKER_FLAGS "-stdlib=libc++")
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-find_package(Boost COMPONENTS random signals REQUIRED)
+set(CMAKE_CXX_COMPILER "clang++")
+find_package(Boost REQUIRED COMPONENTS random signals system iostreams)
 cmake_minimum_required(VERSION 2.8)
 aux_source_directory(./src SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 enable_testing()
 add_subdirectory(src)
 add_subdirectory(test)
+target_link_libraries (hangman
+                       ${Boost_LIBRARIES}
+                       ${CMAKE_THREAD_LIBS_INIT})
