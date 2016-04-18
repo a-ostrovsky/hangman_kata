@@ -7,6 +7,7 @@ add_executable (hangman_test
                 test_player.cpp
                 test_single_game.cpp
                 test_scoreboard.cpp
+                test_alpha_numeric_filter.cpp
                 main.cpp)
 target_link_libraries (hangman_test
                        hangman_lib

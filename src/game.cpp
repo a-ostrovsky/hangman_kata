@@ -1,6 +1,6 @@
 #include <memory>
-#include <boost/iostreams/filtering_stream.hpp>
 #include "game.h"
+#include "alpha_numeric_filter.h"
 #include "single_game.h"
 #include "scoreboard.h"
 
@@ -12,10 +12,12 @@ void game::play() {
   auto word_ptr = std::make_shared<word>(random_word());
   auto player_ptr = std::make_shared<player>(LIVES);
 
-  boost::iostreams::filtering_istream input;
-  input.push(std::cin);
+  //  auto cin_buf = std::cin.rdbuf();
+  alpha_numeric_filter alpha_numeric(std::cin);
+  std::istream in(&alpha_numeric);
+  //  std::cin.rdbuf(&alpha_numeric);
 
-  single_game played_game(word_ptr, player_ptr, std::cin);
+  single_game played_game(word_ptr, player_ptr, in);
   scoreboard board(word_ptr, player_ptr);
   show_score(board.stats());
   board.stats_changed.connect(boost::bind(&game::show_score, this, _1));
