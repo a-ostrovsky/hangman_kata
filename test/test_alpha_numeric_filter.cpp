@@ -29,6 +29,6 @@ TEST_F(alpha_numeric_filter_fixture, alpha_numeric_chars_are_forwarded) {
 }
 
 TEST_F(alpha_numeric_filter_fixture, non_alpha_numeric_chars_are_filtered) {
-  unfiltered_stream_ << 'a' << '\n' << 'b';
+  unfiltered_stream_ << 'a' << '\n' << 'b' << '\n';
   ASSERT_EQ("ab", filtered_data());
 }

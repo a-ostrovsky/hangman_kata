@@ -8,7 +8,7 @@ namespace hangman {
 class alpha_numeric_filter : public std::streambuf {
  public:
   alpha_numeric_filter(std::istream &input);
-  int underflow() override;
+  std::streambuf::int_type underflow() override;
 
 private:
   std::istream &input_;
