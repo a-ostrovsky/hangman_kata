@@ -12,5 +12,5 @@ enable_testing()
 add_subdirectory(src)
 add_subdirectory(test)
 target_link_libraries (hangman
-                       ${Boost_LIBRARIES}
+                       ${Boost_LIBRARIES}                       
                        ${CMAKE_THREAD_LIBS_INIT})

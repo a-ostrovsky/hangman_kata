@@ -1,4 +1,5 @@
 #include <memory>
+#include "system.h"
 #include "game.h"
 #include "alpha_numeric_filter.h"
 #include "single_game.h"
@@ -11,12 +12,8 @@ game::game(const std::vector<std::string> &words) : words_(words) {}
 void game::play() {
   auto word_ptr = std::make_shared<word>(random_word());
   auto player_ptr = std::make_shared<player>(LIVES);
-
-  //  auto cin_buf = std::cin.rdbuf();
   alpha_numeric_filter alpha_numeric(std::cin);
   std::istream in(&alpha_numeric);
-  //  std::cin.rdbuf(&alpha_numeric);
-
   single_game played_game(word_ptr, player_ptr, in);
   scoreboard board(word_ptr, player_ptr);
   show_score(board.stats());
@@ -25,7 +22,8 @@ void game::play() {
 }
 
 void game::show_score(const std::string &score) {
-  std::cout << score << std::endl;
+  system::clear_screen();
+  system::print_to_coordinates(0, 0, score);
 }
 
 std::string game::random_word() {

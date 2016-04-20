@@ -13,7 +13,7 @@ class game {
   game(const std::vector<std::string> &words);
   void play();
 
- private:
+ private:  
   void show_score(const std::string &score);
   std::string random_word();
   std::vector<std::string> words_;

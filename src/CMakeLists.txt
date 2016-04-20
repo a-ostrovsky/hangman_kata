@@ -7,7 +7,8 @@ add_library(hangman_lib
             word.cpp
             alpha_numeric_filter.cpp
             scoreboard.cpp
+            system.cpp
             main.cpp)
 target_link_libraries (hangman_lib
-                       ${Boost_LIBRARIES}
+                       ${Boost_LIBRARIES}                       
                        ${CMAKE_THREAD_LIBS_INIT})
