@@ -1,6 +1,6 @@
+#include <gtest/gtest.h>
 #include <memory>
 #include <sstream>
-#include <gtest/gtest.h>
 #include "alpha_numeric_filter.h"
 
 using namespace hangman;

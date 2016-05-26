@@ -4,8 +4,9 @@
 
 using namespace hangman;
 
-single_game::single_game(std::shared_ptr<word> word, std::shared_ptr<player> player,
-           std::istream &user_input)
+single_game::single_game(std::shared_ptr<word> word,
+                         std::shared_ptr<player> player,
+                         std::istream &user_input)
     : word_(word), player_(player), user_input_(user_input) {}
 
 void single_game::guess_next_letter() {

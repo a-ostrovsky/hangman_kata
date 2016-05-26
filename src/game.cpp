@@ -1,9 +1,10 @@
-#include <memory>
-#include "system.h"
 #include "game.h"
+#include <cstdlib>
+#include <memory>
 #include "alpha_numeric_filter.h"
-#include "single_game.h"
 #include "scoreboard.h"
+#include "single_game.h"
+#include "system.h"
 
 using namespace hangman;
 
@@ -16,15 +17,20 @@ void game::play() {
   std::istream in(&alpha_numeric);
   single_game played_game(word_ptr, player_ptr, in);
   scoreboard board(word_ptr, player_ptr);
+  go_to_letter_input_position();
   show_score(board.stats());
-  board.stats_changed.connect(boost::bind(&game::show_score, this, _1));
+  board.stats_changed.connect([this](auto stats) { this->show_score(stats); });
   played_game.play();
 }
 
 void game::show_score(const std::string &score) {
   system::clear_screen();
-  system::print_to_coordinates(0, 0, score);
+  system::go_to_coordinates(0, 0);
+  std::cout << score;
+  go_to_letter_input_position();
 }
+
+void game::go_to_letter_input_position() { system::go_to_coordinates(2, 1); }
 
 std::string game::random_word() {
   boost::random::uniform_int_distribution<size_t> distribution(

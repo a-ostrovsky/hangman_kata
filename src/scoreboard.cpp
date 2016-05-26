@@ -1,6 +1,6 @@
-#include <sstream>
-#include <boost/optional/optional_io.hpp>
 #include "scoreboard.h"
+#include <boost/optional/optional_io.hpp>
+#include <sstream>
 
 using namespace hangman;
 

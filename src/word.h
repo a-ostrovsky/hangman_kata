@@ -1,10 +1,10 @@
 #ifndef WORD_H
 #define WORD_H
 
+#include <boost/optional.hpp>
 #include <string>
 #include <unordered_set>
 #include <vector>
-#include <boost/optional.hpp>
 #include "with_observable_state.h"
 
 namespace hangman {

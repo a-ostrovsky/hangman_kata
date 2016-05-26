@@ -6,7 +6,8 @@
 class system {
  public:
   static void print_to_coordinates(int horizontal, int vertical,
-                                   const std::string &text);
+                                   const std::string& text);
+  static void go_to_coordinates(int horizontal, int vertical);
   static void clear_screen();
 };
 

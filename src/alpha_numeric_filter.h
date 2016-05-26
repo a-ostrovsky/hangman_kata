@@ -10,7 +10,7 @@ class alpha_numeric_filter : public std::streambuf {
   alpha_numeric_filter(std::istream &input);
   std::streambuf::int_type underflow() override;
 
-private:
+ private:
   std::istream &input_;
 };
 }

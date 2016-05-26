@@ -1,9 +1,9 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 
+#include <boost/signals2.hpp>
 #include <memory>
 #include <string>
-#include <boost/signals2.hpp>
 #include "player.h"
 #include "word.h"
 

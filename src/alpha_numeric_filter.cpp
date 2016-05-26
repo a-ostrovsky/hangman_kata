@@ -1,5 +1,5 @@
-#include <istream>
 #include "alpha_numeric_filter.h"
+#include <istream>
 
 using namespace hangman;
 

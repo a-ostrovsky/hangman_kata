@@ -1,9 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <boost/random.hpp>
 #include <string>
 #include <vector>
-#include <boost/random.hpp>
 
 namespace hangman {
 
@@ -13,8 +13,9 @@ class game {
   game(const std::vector<std::string> &words);
   void play();
 
- private:  
-  void show_score(const std::string &score);
+ private:
+  static void show_score(const std::string &score);
+  static void go_to_letter_input_position();
   std::string random_word();
   std::vector<std::string> words_;
   boost::random::mt19937 generator_;

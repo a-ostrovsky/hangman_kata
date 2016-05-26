@@ -11,7 +11,7 @@ bool word::guess_letter(const char &letter) {
   if (is_letter_already_guessed(lower_case_letter)) {
     return false;
   }
-  guessed_lower_case_letters_.insert(lower_case_letter);  
+  guessed_lower_case_letters_.insert(lower_case_letter);
   notify_state_changed();
   return is_letter_in_word(lower_case_letter);
 }
